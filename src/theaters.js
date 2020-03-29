@@ -78,6 +78,16 @@ export class Theaters {
     this.helper = helper;
   }
 
+  //  * Récupérer une liste de cinémas et la liste des films qui y passent actuellement en fonction d'un code postal.
+  //  *
+  //  * @param mixed $zip Le code postal de la ville du/des cinéma(s).
+  //  * @param $date=null Spécifier une date pour les horaires.
+  //  * @param $movieCode=null Spécifier les horaires d'un film (par identifiant).
+  //  * @param int $count=10 Le nombre maximum de résultats par page.
+  //  * @param int $page=1 La page des résultats.
+  //  *
+  //  * @return AlloData|array|false
+  //  */
   showTimesByPostCode = (
     postCode,
     date = null,
@@ -86,7 +96,7 @@ export class Theaters {
     page = 1
   ) => {
     const payload = {
-      postCode: postCode,
+      zip: postCode,
       count: count,
       page: page
     };
@@ -101,107 +111,5 @@ export class Theaters {
         REMOTE_ADDR: ip
       }
     });
-    //     $this->set('zip', $zip);
-    //     $this->set('count', (int) $count);
-    //     $this->set('page', (int) $page);
-    //     if ($date !== null)
-    //         $this->set('date', $date);
-    //     if ($movieCode !== null)
-    //         $this->set('movie', $movieCode);
-    //     // Récupération et revoi des données
-    //     return $this->getData('rest/v3/showtimelist', 'feed', $url);
   };
 }
-
-// /**
-//  * Récupérer une liste de cinémas et la liste des films qui y passent actuellement en fonction d'un code postal.
-//  *
-//  * @param mixed $zip Le code postal de la ville du/des cinéma(s).
-//  * @param $date=null Spécifier une date pour les horaires.
-//  * @param $movieCode=null Spécifier les horaires d'un film (par identifiant).
-//  * @param int $count=10 Le nombre maximum de résultats par page.
-//  * @param int $page=1 La page des résultats.
-//  *
-//  * @return AlloData|array|false
-//  */
-
-// public function showtimesByZip($zip, $date=null, $movieCode=null, $count = 10, $page = 1)
-// {
-//     // Préréglages
-//     $this->set('zip', $zip);
-//     $this->set('count', (int) $count);
-//     $this->set('page', (int) $page);
-
-//     if ($date !== null)
-//         $this->set('date', $date);
-
-//     if ($movieCode !== null)
-//         $this->set('movie', $movieCode);
-
-//     // Récupération et revoi des données
-//     return $this->getData('rest/v3/showtimelist', 'feed', $url);
-// }
-
-// /**
-//  * Récupérer une liste de cinémas et la liste des films qui y passent actuellement en fonction de coordonnées géographiques (latitude, longitude [, rayon]).
-//  *
-//  * @param float $lat La coordonnée latitude du cinéma.
-//  * @param float $long La coordonnée longitude du cinéma.
-//  * @param int $radius Le rayon dans lequel chercher.
-//  * @param $date=null Spécifier une date pour les horaires.
-//  * @param $movieCode=null Spécifier les horaires d'un film (par identifiant).
-//  * @param int $count=10 Le nombre maximum de résultats par page.
-//  * @param int $page=1 La page des résultats.
-//  * @param &$url Contiendra l'URL utilisé.
-//  *
-//  * @return AlloData|array|false
-//  */
-
-// public function showtimesByPosition($lat, $long, $radius=10, $date=null, $movieCode=null, $count = 10, $page = 1, &$url = null)
-// {
-//     // Préréglages
-//     $this->set('lat', (float) $lat);
-//     $this->set('long', (float) $long);
-//     $this->set('radius', (int) $radius);
-//     $this->set('count', (int) $count);
-//     $this->set('page', (int) $page);
-
-//     if ($date !== null)
-//         $this->set('date', $date);
-
-//     if ($movieCode !== null)
-//         $this->set('movie', $movieCode);
-
-//     // Récupération et revoi des données
-//     return $this->getData('rest/v3/showtimelist', 'feed', $url);
-// }
-
-// /**
-//  * Récupérer une liste de cinémas et la liste des films qui y passent actuellement en fonction d'un ou de plusieurs identifiant(s) de cinéma(s);
-//  *
-//  * @param array|string $theaters Un identifiant/une liste d'identifiants de cinéma(s).
-//  * @param $date=null Spécifier une date pour les horaires.
-//  * @param $movieCode=null Spécifier les horaires d'un film (par identifiant).
-//  * @param int $count=10 Le nombre maximum de résultats par page.
-//  * @param int $page=1 La page des résultats.
-//  * @param &$url Contiendra l'URL utilisé.
-//  *
-//  * @return AlloData|array|false
-//  */
-
-// public function showtimesByTheaters($theaters, $date=null, $movieCode=null, $count = 10, $page = 1, &$url = null)
-// {
-//     // Préréglages
-//     $this->set('theaters', (array) $theaters);
-//     $this->set('count', (int) $count);
-//     $this->set('page', (int) $page);
-
-//     if ($date !== null)
-//         $this->set('date', $date);
-
-//     if ($movieCode !== null)
-//         $this->set('movie', $movieCode);
-
-//     // Récupération et revoi des données
-//     return $this->getData('rest/v3/showtimelist', 'feed', $url);
-// }
