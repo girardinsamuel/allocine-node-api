@@ -1,0 +1,27 @@
+{
+  "name": "allocine-node-api",
+  "version": "1.0.0",
+  "description": "Node.js API Client for Allociné",
+  "main": "allocine-client.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/girardinsamuel/allocine-node-api.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Allociné",
+    "api",
+    "client"
+  ],
+  "author": "Samuel Girardin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/girardinsamuel/allocine-node-api/issues"
+  },
+  "homepage": "https://github.com/girardinsamuel/allocine-node-api#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "js-sha1": "^0.6.0",
+    "sha1": "^1.1.1"
+  }
+}
