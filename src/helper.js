@@ -41,7 +41,6 @@ class Helper {
     let searchQuery = `${searchParameters
       .toString()
       .replace('%2B', '+')}&sed=${nowDate}`
-    debugger
     // https://github.com/pvorb/node-sha1
     // Three options available to encode URI
     // escape() will not encode: @*/+
