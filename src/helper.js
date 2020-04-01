@@ -83,12 +83,9 @@ class Helper {
   }
 
   makeRequest(url) {
+    let userAgent = this.getRandomUserAgent()
     return fetch(url, {
-      method: 'get',
-      mode: 'cors',
-      headers: {
-        'User-Agent': this.getRandomUserAgent()
-      }
+      method: 'get'
     }).then(res => res.json())
   }
 }
