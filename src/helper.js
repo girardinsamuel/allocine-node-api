@@ -87,8 +87,7 @@ class Helper {
       method: 'get',
       mode: 'cors',
       headers: {
-        'User-Agent': this.getRandomUserAgent(),
-        'Content-Type': 'application/json'
+        'User-Agent': this.getRandomUserAgent()
       }
     }).then(res => res.json())
   }
